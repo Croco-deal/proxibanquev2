@@ -23,9 +23,9 @@ public class IndexServlet extends HttpServlet {
 		// Appel de notre instance unique de la classe ClientService (Singleton)
 		ClientService service = ClientService.getInstance();
 		// Chargement de la liste d'article en attribut de requête
-		req.setAttribute("articles", service.getAll());
+		req.setAttribute("clients", service.getAll());
 		//Chargement de l’article en attribut de requête; 
-		//req.setAttribute("article", service.get
+	
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp")
 		.forward(req, resp);
 

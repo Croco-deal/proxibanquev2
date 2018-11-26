@@ -33,8 +33,8 @@ private final MySqlConnection mySqlConn;
 			ResultSet rs = st.executeQuery(SqlQueries.READ_ALL);
 			while (rs.next()) {
 				Integer id = rs.getInt("id");
-				String firstname  = rs.getString("title");
-				String lastname = rs.getString("content");
+				String firstname  = rs.getString("firstname");
+				String lastname = rs.getString("lastname");
 				String email = rs.getString("email");
 				String address = rs.getString("address");
 				result.add(new Client(firstname , lastname , email , address));
