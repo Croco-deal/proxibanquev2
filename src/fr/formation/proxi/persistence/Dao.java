@@ -26,4 +26,10 @@ public interface Dao<T> {
 	public List<T> readAll();
 	
 	
+	/** 
+	 * Récupère toutes les entités (lignes) d'une d'une table
+	 * @return List<T> renvoie la liste des objets générés, de toutes les entités lues
+	 */
+	public T transfer(T entity);
+
 }
