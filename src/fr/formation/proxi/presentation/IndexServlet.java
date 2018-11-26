@@ -18,7 +18,7 @@ public class IndexServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ClientService service = ClientService.getInstance();
-		// Chargement de la liste d'article en attribut de requête
+		// Chargement de la liste de clients en attribut de requête
 		req.setAttribute("clients", service.getAll());
 		//Chargement de l’article en attribut de requête; 
 	

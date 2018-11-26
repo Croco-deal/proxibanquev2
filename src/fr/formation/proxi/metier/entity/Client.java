@@ -30,6 +30,16 @@ public class Client {
 		this.accounts = new ArrayList<>();
 	}
 
+	public Client(Integer id, String firstname, String lastname, String email, String address) {
+		this();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.address = address;
+	}
+
+	
 	public Client(String firstname, String lastname, String email,
 			String address) {
 		this();
@@ -38,6 +48,7 @@ public class Client {
 		this.email = email;
 		this.address = address;
 	}
+
 
 	public Integer getId() {
 		return id;

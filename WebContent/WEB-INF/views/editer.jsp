@@ -4,9 +4,28 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>EDITER</title>
 </head>
-<body>
-
-</body>
+<body style="color: #FF1493;">	
+	<h1>Modifier Client</h1>
+		<form method="post" action="">
+		<fieldset>
+				<legend>Modification nom</legend>
+			<div>
+				<label for="lastname">Nom </label>
+				<input id="lastname" name="lastname">
+			</div>
+		</fieldset>
+		<fieldset>
+				<legend>Modification prénom</legend>
+			<div>
+				<label for="firstname">Prénom </label>
+				<input id="firstname" name="firstname">
+			</div>
+		</fieldset>
+		<button>Envoyer</button>
+		</form>
+	</body>
 </html>
+		
+		

@@ -9,15 +9,15 @@
 <meta charset="ISO-8859-1">
 <title>Bienvenue client !</title>
 </head>
-<body>
-	<a href ="form.html"> faire virement</a>
+<body style="color: #FF1493;">
+	<a href ="virement.html"> faire virement</a>
 	<h1>Liste des clients</h1>
 	<div>
 		<c:forEach var="client" items="${clients}">
-		<div class ="client">
+		<div class="client" title="${client.id}">
 		<h2>
 		${client.firstname}
-		<a href="delete.html?id=${client.id}"> X</a>
+		<a href="editer.html?id=${client.id}"> EDITER</a>
 		</h2>
 		</div>
 		</c:forEach>

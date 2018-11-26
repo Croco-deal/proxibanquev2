@@ -32,7 +32,7 @@ private final MySqlConnection mySqlConn;
 				String lastname = rs.getString("lastname");
 				String email = rs.getString("email");
 				String address = rs.getString("address");
-				result.add(new Client(firstname , lastname , email , address));
+				result.add(new Client(id, firstname , lastname , email , address));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -44,10 +44,9 @@ private final MySqlConnection mySqlConn;
 	
 	@Override
 	public Client update(Client entity) {
-		Client updatedClient = new Client();
-		
+		//Client updatedClient = new Client();
 		try {
-		PreparedStatement preparedStatement = this.mySqlConn.getConn().prepareStatement(String.format(SqlQueries.UPDATE_CLIENT));
+		PreparedStatement preparedStatement = this.mySqlConn.getConn().prepareStatement(String.format(SqlQueries.UPDATE_CLIENT, entity.getId()));
 		preparedStatement.setString(1, entity.getFirstname());
 		preparedStatement.setString(2, entity.getLastname());
 		preparedStatement.setString(3, entity.getEmail());
@@ -56,7 +55,7 @@ private final MySqlConnection mySqlConn;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return updatedClient;
+		return entity;
 	}
 
 	}

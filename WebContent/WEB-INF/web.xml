@@ -28,7 +28,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>EditServlet</servlet-name>
-		<url-pattern>/edit.html</url-pattern>
+		<url-pattern>/editer.html</url-pattern>
 	</servlet-mapping>
 <servlet>
 		<servlet-name>UpdateServlet</servlet-name>

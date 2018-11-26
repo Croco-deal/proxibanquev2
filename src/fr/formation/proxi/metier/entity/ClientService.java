@@ -27,9 +27,7 @@ public class ClientService {
 	public Client getUpdate() {
 		Client updatedClient = new Client();
 		return this.dao.update(updatedClient);
-				
+		
 	}
-	public void update(String firstname, String lastname, String email, String address) {
-		// TODO Auto-generated method stub
-	}
+	
 }
