@@ -24,8 +24,13 @@ public class ClientService {
 		return this.dao.readAll();
 	}
 	
-	public Client getUpdate() {
-		Client updatedClient = new Client();
+	public Client getUpdate(Integer id ,String firstname, String lastname , String email , String address ) {
+		Client updatedClient = new Client(id,firstname,lastname,email,address);
+
+
+		
+		
+		
 		return this.dao.update(updatedClient);
 		
 	}
