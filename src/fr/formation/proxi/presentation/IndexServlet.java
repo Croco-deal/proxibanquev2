@@ -29,4 +29,5 @@ public class IndexServlet extends HttpServlet {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp")
 		.forward(req, resp);
 
+	}
 }
