@@ -23,6 +23,21 @@
 				<input id="firstname" name="firstname">
 			</div>
 		</fieldset>
+			<fieldset>
+				<legend>Modification Adresse</legend>
+			<div>
+				<label for="address">Adresse </label>
+				<input id="address" name="address">
+			</div>
+		</fieldset>
+			<fieldset>
+				<legend>Modification email</legend>
+			<div>
+				<label for="email">Email </label>
+				<input id="email" name="email">
+			</div>
+		</fieldset>
+
 		<button>Envoyer</button>
 		</form>
 	</body>

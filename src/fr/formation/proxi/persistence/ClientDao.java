@@ -7,15 +7,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.formation.proxi.metier.entity.Account;
 import fr.formation.proxi.metier.entity.Client;
+import fr.formation.proxi.metier.entity.ClientService;
 
 public class ClientDao implements Dao<Client> {
 
 private final MySqlConnection mySqlConn;
+private final ClientService cs;
+
+
 	
 	public ClientDao() {
 		this.mySqlConn = MySqlConnection.getInstance();
+		this.cs = ClientService.getInstance();
 	}
 		
 	@Override
@@ -44,14 +48,25 @@ private final MySqlConnection mySqlConn;
 	
 	@Override
 	public Client update(Client entity) {
-		//Client updatedClient = new Client();
+		
+		
 		try {
-		PreparedStatement preparedStatement = this.mySqlConn.getConn().prepareStatement(String.format(SqlQueries.UPDATE_CLIENT, entity.getId()));
-		preparedStatement.setString(1, entity.getFirstname());
-		preparedStatement.setString(2, entity.getLastname());
-		preparedStatement.setString(3, entity.getEmail());
-		preparedStatement.setString(4, entity.getAddress());
-		preparedStatement.setInt(5, entity.getId());
+		
+			Statement st = this.mySqlConn.getConn().createStatement();
+
+            String query = String.format(SqlQueries.UPDATE_CLIENT,entity.getFirstname() , entity.getLastname() ,
+            		entity.getEmail() , entity.getAddress() , entity.getId() );
+
+
+
+
+            st.execute(query);
+
+
+
+            
+		System.out.println(entity.getFirstname());
+		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
