@@ -1,5 +1,12 @@
 package fr.formation.proxi.presentation;
 
-public class VirementServlet {
+import javax.servlet.http.HttpServlet;
+
+public class VirementServlet extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 }

@@ -26,10 +26,6 @@ private final MySqlConnection mySqlConn;
 	}
 
 
-	@Override
-	public Client transfer(Client entity) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	
