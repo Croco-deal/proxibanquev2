@@ -1,5 +1,9 @@
 package fr.formation.proxi.persistence;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.formation.proxi.metier.entity.Client;
@@ -21,8 +25,27 @@ private final MySqlConnection mySqlConn;
 
 	@Override
 	public List<Client> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Client> result = new ArrayList<>();
+
+		try {
+			Statement st = this.mySqlConn.getConn().createStatement();
+			ResultSet rs = st.executeQuery(SqlQueries.READ_ALL);
+			while (rs.next()) {
+				Integer id = rs.getInt("id");
+				String firstname  = rs.getString("title");
+				String lastname = rs.getString("content");
+				String email = rs.getString("email");
+				String address = rs.getString("address");
+				result.add(new Client(firstname , lastname , email , address));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return result;
+
+	
 	}
 
 
