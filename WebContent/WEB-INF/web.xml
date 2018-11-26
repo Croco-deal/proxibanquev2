@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>proxibanquev2</display-name>
 
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+ id="WebApp_ID" version="3.1">
+ <display-name>blog</display-name>
+	<servlet>
+		<servlet-name>IndexServlet</servlet-name>
+		<servlet-class>fr.formation.proxi.presentation.IndexServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IndexServlet</servlet-name>
+		<url-pattern>/index.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CompteServlet</servlet-name>
+		<servlet-class>fr.formation.proxi.presentation.CompteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CompteServlet</servlet-name>
+		<url-pattern>/comptes.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EditServlet</servlet-name>
+		<servlet-class>fr.formation.proxi.presentation.EditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditServlet</servlet-name>
+		<url-pattern>/edit.html</url-pattern>
+	</servlet-mapping>
 <servlet>
-    <servlet-name>IndexServlet</servlet-name>
-    <servlet-class>fr.formation.proxi.presentation.IndexServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>IndexServlet</servlet-name>
-    <url-pattern>/index.html</url-pattern>
-  </servlet-mapping>
+		<servlet-name>UpdateServlet</servlet-name>
+		<servlet-class>fr.formation.proxi.presentation.UpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateServlet</servlet-name>
+		<url-pattern>/update.html</url-pattern>
+	</servlet-mapping>
+  
+
 </web-app>

@@ -14,7 +14,6 @@ public class ClientService {
 		return INSTANCE;
 	}
 
-
 	private final ClientDao dao;
 	
 	public ClientService() {
@@ -23,5 +22,14 @@ public class ClientService {
 	}
 	public List<Client> getAll(){
 		return this.dao.readAll();
+	}
+	
+	public Client getUpdate() {
+		Client updatedClient = new Client();
+		return this.dao.update(updatedClient);
+				
+	}
+	public void update(String firstname, String lastname, String email, String address) {
+		// TODO Auto-generated method stub
 	}
 }
