@@ -6,7 +6,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
  <display-name>blog</display-name>
 	<servlet>
 		<servlet-name>IndexServlet</servlet-name>
-		<servlet-class>fr.formation.blog.presentation.IndexServlet</servlet-class>
+		<servlet-class>fr.formation.proxi.presentation.IndexServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>IndexServlet</servlet-name>

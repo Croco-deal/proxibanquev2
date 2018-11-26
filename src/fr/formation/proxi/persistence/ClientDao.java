@@ -1,11 +1,13 @@
 package fr.formation.proxi.persistence;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.formation.proxi.metier.entity.Account;
 import fr.formation.proxi.metier.entity.Client;
 
 public class ClientDao implements Dao<Client> {
@@ -16,13 +18,6 @@ private final MySqlConnection mySqlConn;
 		this.mySqlConn = MySqlConnection.getInstance();
 	}
 		
-
-	@Override
-	public Client update(Client entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	@Override
 	public List<Client> readAll() {
 		
@@ -44,10 +39,25 @@ private final MySqlConnection mySqlConn;
 		}
 
 		return result;
-
 	
 	}
-
+	
+	@Override
+	public Client update(Client entity) {
+		Client updatedClient = new Client();
+		
+		try {
+		PreparedStatement preparedStatement = this.mySqlConn.getConn().prepareStatement(String.format(SqlQueries.UPDATE_CLIENT));
+		preparedStatement.setString(1, entity.getFirstname());
+		preparedStatement.setString(2, entity.getLastname());
+		preparedStatement.setString(3, entity.getEmail());
+		preparedStatement.setString(4, entity.getAddress());
+		preparedStatement.setInt(5, entity.getId());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return updatedClient;
+	}
 
 	}
 

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.formation.proxi.metier.entity.ClientService;
 
-public class CompteServlet extends HttpServlet {
+public class AccountServlet extends HttpServlet {
 
 	/**
 	 * 
@@ -26,4 +26,3 @@ public class CompteServlet extends HttpServlet {
 	}
 
 }
-
