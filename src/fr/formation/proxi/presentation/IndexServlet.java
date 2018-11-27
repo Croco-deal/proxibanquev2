@@ -12,6 +12,9 @@ public class IndexServlet extends HttpServlet {
 
 	/**
 	 * 
+	 * gère la page d'acceuil 
+	 * 
+	 * @author Omar & Sarah
 	 */
 	private static final long serialVersionUID = 1L;
 

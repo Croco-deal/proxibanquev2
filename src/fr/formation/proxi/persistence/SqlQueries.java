@@ -1,5 +1,10 @@
 package fr.formation.proxi.persistence;
 
+/**
+ * La classe SqlQueries regroupent l'ensemble des requêtes SQL sous forme de constantes.
+ * @author Sarah et Omar
+ *
+ */
 public class SqlQueries {
 	
 	public static final String READ_ALL = "SELECT * FROM client;";

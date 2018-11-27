@@ -11,6 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import fr.formation.proxi.metier.entity.Client;
 import fr.formation.proxi.metier.entity.ClientService;
 
+
+
+
+/**
+ * met à jour les informations du client
+ * 
+ * @author Omar  & Sarah
+ *
+ */
 public class EditServlet extends HttpServlet {
 
 	/**
@@ -37,6 +46,8 @@ public class EditServlet extends HttpServlet {
 			String email = req.getParameter("email");
 			String address = req.getParameter("address");
 
+			
+			
 			ClientService service = ClientService.getInstance();
 		    Client client = new Client(id, firstname, lastname, email, address);
 			// service.getUpdate(client);

@@ -13,6 +13,8 @@ public class VirementServlet extends HttpServlet {
 
 	/**
 	 * 
+	 * gère les transactions de compte à compte du même client
+	 * @author Omar & Sarah
 	 */
 	private static final long serialVersionUID = 1L;
 	

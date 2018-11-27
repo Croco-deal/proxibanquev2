@@ -10,6 +10,10 @@ import fr.formation.proxi.metier.entity.Account;
 import fr.formation.proxi.metier.entity.AccountService;
 import fr.formation.proxi.metier.entity.Client;
 
+/**
+ * @author Adminl
+ *
+ */
 public class AccountDao implements Dao<Account> {
 
 	private final MySqlConnection mySqlConn;
@@ -20,6 +24,10 @@ public class AccountDao implements Dao<Account> {
 		this.as = AccountService.getInstance();
 	}
 
+	/** Met à jour le compte du client
+	 * après un virement
+	  * 
+	  */
 	@Override
 	public Account update(Account entity) {
 		try {
@@ -34,6 +42,14 @@ public class AccountDao implements Dao<Account> {
 		return entity;
 	}
 
+	
+	
+	
+	/** 
+	 * récupère tous les comptes d'un client à partir de la BDD
+	 * 
+	 * @param id : l'identifiant du compte
+	 */
 	public List<Account> readAccountAll(Integer id) {
 
 		List<Account> accounts = new ArrayList<>();
@@ -62,6 +78,11 @@ public class AccountDao implements Dao<Account> {
 
 	
 	
+	/**
+	 * permet de  sélectionner un compte client grâce 
+	 * à son id
+	 * @return account : Instance de la CLasse Account
+	 */
 	public Account read(Integer id_compte) {
 		Account account = new Account(id_compte);
 		try {
