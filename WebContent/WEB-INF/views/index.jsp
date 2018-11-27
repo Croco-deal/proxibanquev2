@@ -62,7 +62,8 @@
 								<a href="virement.html?id=${client.id}" class="button"> </a>
 							<button class="button"> AFFICHER LISTE DES COMPTES </button>
 								<a href="editer.html?id=${client.id}" class="button"> </a> 
-						</h6>			
+						</h6>				
+
 				</div>
 				</fieldset>
 			</c:forEach>

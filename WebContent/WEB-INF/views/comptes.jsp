@@ -42,29 +42,22 @@
       </div>
     </header>
 
-    <!-- Clients -->
-    <section class="bg-light" id="team">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-           <h2 class="section-heading text-uppercase">Vos Clients</h2>
-            <h2 class="section-heading text-uppercase"></h2>
-       		 <c:forEach var="client" items="${clients}">
- 	 			<fieldset>
- 	 				<h3 class="section-heading text-uppercase"> ${client.id} - ${client.firstname} ${client.lastname}</h3>
-				<div class="client" title="${client.id}">
-					<h5> Adresse: ${client.address} <br/> Email: ${client.email}</h5>
-						<h6> <a href="editer.html?id=${client.id}" style="text-align:left"> ---EDITER---  </a>
-						<a href="virement.html?id=${client.id}"> ---EFFECTUER UN VIREMENT---  </a>
-						<a href="editer.html?id=${client.id}"> ---AFFICHER LISTE DES COMPTES--- </a> </h6>			
-				</div>
-				</fieldset>
-			</c:forEach>
-     			</div>
-			</div>
-		</div>
-	</section>  
+    <!-- Comptes -->
 
+	<form>
+		<div>
+			<label for="number">Numéro de compte</label> <input id="number"
+				name="number" value="${account.number}">
+		</div>
+		<div>
+			<label for="balance">Crédit </label> <input id="balance" name="balance"
+				value="${account.balance}">
+		</div>
+
+	</form>
+
+
+<
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -328,3 +321,4 @@
   </body>
 
 </html>
+

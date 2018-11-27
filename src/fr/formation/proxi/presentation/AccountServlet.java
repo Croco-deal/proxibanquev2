@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.formation.proxi.metier.entity.AccountService;
 import fr.formation.proxi.metier.entity.ClientService;
 
 public class AccountServlet extends HttpServlet {
@@ -19,9 +20,11 @@ public class AccountServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		ClientService service = ClientService.getInstance();
+		AccountService service = AccountService.getInstance();
+		System.out.println("avant");
 		req.setAttribute("accounts", service.getAll());
-		this.getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp")
+		System.out.println("apres");
+		this.getServletContext().getRequestDispatcher("/WEB-INF/views/comptes.jsp")
 		.forward(req, resp);
 	}
 
