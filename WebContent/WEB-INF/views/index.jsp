@@ -56,13 +56,18 @@
 					<h5> Adresse: ${client.address} <br/> Email: ${client.email}</h5>
 					
 						<h6>
-							<button class="button"> EDITER </button>
-								<a href="editer.html?id=${client.id}" class="button"> </a>
-							<button class="button"> EFFECTUER UN VIREMENT </button>
-								<a href="virement.html?id=${client.id}" class="button"> </a>
-							<button class="button"> AFFICHER LISTE DES COMPTES </button>
-								<a href="editer.html?id=${client.id}" class="button"> </a> 
-						</h6>				
+							<a href="editer.html?id=${client.id}"> EDITER </a>
+							<a href="virement.html?id=${client.id}"> VIREMENT </a>
+							<a href="comptes.html?id=${client.id}"> LISTE DE COMPTES </a>
+							
+<!-- 						<h6> -->
+<!-- 							<button class="button"> EDITER </button> -->
+<%-- 								<a href="editer.html?id=${client.id}" class="button"> </a> --%>
+<!-- 							<button class="button"> EFFECTUER UN VIREMENT </button> -->
+<%-- 								<a href="virement.html?id=${client.id}" class="button"> </a> --%>
+<!-- 							<button class="button"> AFFICHER LISTE DES COMPTES </button> -->
+<%-- 								<a href="editer.html?id=${client.id}" class="button"> </a>  --%>
+<!-- 						</h6>				 -->
 
 				</div>
 				</fieldset>

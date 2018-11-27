@@ -25,5 +25,11 @@ public interface Dao<T> {
 	 */
 	public List<T> readAll();
 	
-
+	/** 
+	 * Lit les informations d'une entité en BDD
+	 * @param id identifiant unique de l'entité
+	 * @return T l'entité construite à partir des informations récupérées
+	 */
+	public T read(Integer id);
+	
 }

@@ -31,5 +31,8 @@ public class ClientService {
 		return this.dao.update(updatedClient);
 		
 	}
+	public Client read(Integer id) {
+		return this.dao.read(id);
+	}
 	
 }

@@ -21,8 +21,9 @@ public class EditServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		ClientService service = ClientService.getInstance();
-		req.setAttribute("clients", service.getAll());
+		Integer id = Integer.parseInt(req.getParameter("id"));
+		Client client = ClientService.getInstance().read(id);
+		req.setAttribute("client", client);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/editer.jsp")
 		.forward(req, resp);
 	}

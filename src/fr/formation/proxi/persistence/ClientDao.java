@@ -66,6 +66,32 @@ private final ClientService cs;
 		return entity;
 	}
 
+	public Client read(Integer id) {
+	
+		Client client = new Client();
+		
+		try {
+			Statement st = this.mySqlConn.getConn().createStatement();
+			ResultSet rs = st.executeQuery(String.format(SqlQueries.READ,id));
+			rs.next();
+				//Integer id = rs.getInt("id");
+				String firstname  = rs.getString("firstname");
+				String lastname = rs.getString("lastname");
+				String email = rs.getString("email");
+				String address = rs.getString("address");
+				client.setId(id);
+				client.setFirstname(firstname);
+				client.setLastname(lastname);
+				client.setEmail(email);
+				client.setAddress(address);
+			} catch (SQLException e) {
+							
+			e.printStackTrace();
+			}
+		
+			return client;
+	}
+
 	}
 
 	
