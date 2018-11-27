@@ -48,18 +48,26 @@
 		<table style="width:70%; border:1px solid black; padding:60px; margin: auto;">
 				<tr>
 					<th>Numéro de compte </th>
-					<th>Compte Courant </th> 
-					<th>Compte Epargne </th>
+					<th>Compte  </th> 
+					<th>Type </th>
 				</tr>
 					<c:forEach var="account" items="${accounts}"> 
 						<tr class="account">  
 							<td> ${account.number}</td>
 							<td> ${account.balance}</td>
-							<td> ${account.savings}</td>
+							<c:if test="${account.savings == 'false'}">
+							<td> Compte Courant</td>
+							</c:if>
+							<c:if test="${account.savings == 'true' }">
+							<td> Compte Epargne </td>
+							</c:if>
+							
 						</tr>
 					</c:forEach> 
 		</table>
 	</section>
+	
+	
 <!--     Footer -->
     <footer>
       <div class="container">

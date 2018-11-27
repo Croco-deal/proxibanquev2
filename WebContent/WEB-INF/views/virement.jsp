@@ -2,28 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%-- 	<div> --%>
-<!-- 		<form method="post" action=""> -->
-<!-- 			<div> -->
-<!-- 				<label for="id_emetteur">EMETTEUR </label> <input id="id_emetteur" -->
-<%-- 					name="id_emetteur" value="${account.id_emetteur}"> --%>
-<!-- 			</div> -->
-<!-- 			<div> -->
-<!-- 				<label for="id_receveur">REVECEUR</label> <input id="id_receveur" -->
-<%-- 					name="id_receveur" value="${account.id_receveur}"> --%>
-<!-- 			</div> -->
-<!-- 			<div> -->
-<!-- 				<label for="amount">MONTANT </label> <input id="amount" -->
-<%-- 					name="amount" value="${account.amount}"> --%>
-<!-- 									<button>Envoyer</button> -->
-<!-- 			</div> -->
-
-<!-- 		</form> -->
-<!-- 	</div> -->
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,29 +43,49 @@
     </header>
 
 <!--     Comptes -->
-    <section class="bg-light" id="team">
+
+  <section class="bg-light" id="team">
 		<table style="width:70%; border:1px solid black; padding:60px; margin: auto;">
 				<tr>
+					<th>Identifiant </th>
 					<th>Numéro de compte </th>
-					<th>Compte Courant </th> 
-					<th>Compte Epargne </th>
-					<th>Compte Emetteur </th>
-					<th>Compte Bénéficiaire </th>
+					<th> Type </th> 
 				</tr>
 					<c:forEach var="account" items="${accounts}"> 
 						<tr class="account">  
-<%-- 							<td> ${account.number}</td> --%>
-<%-- 							<td> ${account.balance}</td> --%>
-<%-- 							<td> ${account.savings}</td> --%>
-							<td><input type="checkbox" name="id_emetteur" value="id_emetteur"> </td>
-							<td><input type="checkbox" name="id_receveur" value="id_receveur"> </td>
+							<td> ${account.id}</td>
+							<td> ${account.number}</td>
+							<td> ${account.balance}</td>
+							<c:if test="${account.savings == 'false'}">
+							<td> Compte Courant </td>
+							</c:if>
+							<c:if test="${account.savings == 'true'}">
+							<td> Compte Epargne </td>
+							</c:if>
 							
 						</tr>
-					</c:forEach> 
+					</c:forEach>
 		</table>
-		<div>
-		</div>
+		    <div>
+        <form method="post" action="" style="width:70%; border:1px solid black; padding:60px; margin: auto">
+            <div>
+                <label for="id_emetteur">Compte débiteur </label> <input id="id_emetteur"
+                    name="id_emetteur" value="${account.id_emetteur}">
+            </div>
+            <div>
+                <label for="id_receveur">Compte receveur</label> <input id="id_receveur"
+                    name="id_receveur" value="${account.id_receveur}">
+            </div>
+            <div>
+                <label for="amount">Montant </label> <input id="amount"
+                    name="amount" value="${account.amount}">
+                                    <button>Envoyer</button>
+            </div>
+        </form>
+    </div>
+
 	</section>
+   
 	
 <!--     Footer -->
     <footer>

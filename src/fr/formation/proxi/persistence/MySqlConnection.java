@@ -24,6 +24,8 @@ public class MySqlConnection {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	public Connection getConn() {
 		return conn;
 	}

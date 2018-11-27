@@ -29,11 +29,7 @@
 	<servlet-mapping>
 		<servlet-name>EditServlet</servlet-name>
 		<url-pattern>/editer.html</url-pattern>
-	</servlet-mapping>
-	
-
-
-
+	</servlet-mapping>	
 	<servlet>
 		<servlet-name>VirementServlet</servlet-name>
 		<servlet-class>fr.formation.proxi.presentation.VirementServlet</servlet-class>
@@ -43,5 +39,14 @@
 		<url-pattern>/virement.html</url-pattern>
 	</servlet-mapping>
 
+<error-page>
+<error-code>404</error-code>
+<location>/WEB-INF/views/erreur.jsp</location>
+</error-page>
+
+<error-page>
+<error-code>500</error-code>
+<location>/WEB-INF/views/erreur.jsp</location>
+</error-page>
 
 </web-app>

@@ -42,10 +42,15 @@ public class AccountDao implements Dao<Account> {
 			Statement st = this.mySqlConn.getConn().createStatement();
 			ResultSet rs = st.executeQuery(String.format(SqlQueries.READ_ALL_ACCOUNT, id));
 			while (rs.next()) {
+				boolean savings;
+				Integer id_account = Integer.parseInt(rs.getString("id"));
 				String number = rs.getString("number");
 				float balance = Float.parseFloat(rs.getString("balance"));
-				boolean savings = true;
-				accounts.add(new Account(number, balance, savings));
+				String saving = rs.getString("savings");
+				if (saving.equals("1"))
+				{savings = true;}
+				else { savings = false; }
+				accounts.add(new Account(id_account,  number, balance, savings));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

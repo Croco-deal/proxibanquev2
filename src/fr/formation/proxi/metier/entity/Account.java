@@ -40,6 +40,16 @@ public class Account {
 		this(number, balance);
 		this.savings = savings;
 	}
+	
+
+	
+	public Account(Integer id, String number, Float balance, boolean savings) {
+		super();
+		this.id = id;
+		this.number = number;
+		this.balance = balance;
+		this.savings = savings;
+	}
 
 	public Integer getId() {
 		return id;
