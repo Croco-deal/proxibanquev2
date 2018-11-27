@@ -50,24 +50,16 @@
            <h2 class="section-heading text-uppercase">Vos Clients</h2>
             <h2 class="section-heading text-uppercase"></h2>
        		 <c:forEach var="client" items="${clients}">
- 	 			<fieldset style ="border:1px solid black">
+ 	 			<fieldset style ="border:1px solid black; width:60%; padding:10px; margin:auto">
  	 					<h3 class="section-heading text-uppercase">Client ${client.id} - ${client.firstname} ${client.lastname}</h3>
 				<div class="client" title="${client.id}">
 					<h5> Adresse: ${client.address} <br/> Email: ${client.email}</h5>
 					
 						<h6>
-							<a href="editer.html?id=${client.id}"> EDITER </a>
-							<a href="virement.html?id=${client.id}"> VIREMENT </a>
-							<a href="comptes.html?id=${client.id}"> LISTE DE COMPTES </a>
-							
-<!-- 						<h6> -->
-<!-- 							<button class="button"> EDITER </button> -->
-<%-- 								<a href="editer.html?id=${client.id}" class="button"> </a> --%>
-<!-- 							<button class="button"> EFFECTUER UN VIREMENT </button> -->
-<%-- 								<a href="virement.html?id=${client.id}" class="button"> </a> --%>
-<!-- 							<button class="button"> AFFICHER LISTE DES COMPTES </button> -->
-<%-- 								<a href="editer.html?id=${client.id}" class="button"> </a>  --%>
-<!-- 						</h6>				 -->
+							<a href="editer.html?id=${client.id}"> <button>EDITER</button> </a>
+							<a href="virement.html?id=${client.id}"> <button>VIREMENT</button> </a>
+							<a href="comptes.html?id=${client.id}"> <button>LISTE DE COMPTES </button> </a>
+						</h6>
 
 				</div>
 				</fieldset>
