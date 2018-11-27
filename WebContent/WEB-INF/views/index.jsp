@@ -56,7 +56,7 @@
 					<h5> Adresse: ${client.address} <br/> Email: ${client.email}</h5>
 						<h6> <a href="editer.html?id=${client.id}" style="text-align:left"> ---EDITER---  </a>
 						<a href="virement.html?id=${client.id}"> ---EFFECTUER UN VIREMENT---  </a>
-						<a href="editer.html?id=${client.id}"> ---AFFICHER LISTE DES COMPTES--- </a> </h6>			
+						<a href="comptes.html?id=${client.id}"> ---AFFICHER LISTE DES COMPTES--- </a> </h6>			
 				</div>
 				</fieldset>
 			</c:forEach>

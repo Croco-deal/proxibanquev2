@@ -7,24 +7,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.formation.proxi.metier.entity.Account;
+import fr.formation.proxi.metier.entity.AccountService;
 import fr.formation.proxi.metier.entity.Client;
 
 public class AccountDao implements Dao<Account>{
 	
 	private final MySqlConnection mySqlConn;
-	
+	private final AccountService as;
+
 	public AccountDao() {
 		this.mySqlConn = MySqlConnection.getInstance();
+		this.as = AccountService.getInstance();
 	}
-
 
 	@Override
 	public Account update(Account entity) {
 		return entity;
-
 	}
 
-	@Override
+	
 	public List<Account> readAll() {
 
 		List<Account> result = new ArrayList<>();
