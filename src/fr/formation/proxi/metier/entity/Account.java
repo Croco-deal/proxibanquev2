@@ -25,13 +25,13 @@ public class Account {
 	 */
 	private boolean savings;
 
-	public Account() {
+	public Account(Integer id) {
 		this.savings = false;
 		this.balance = 0F;
+		this.id = id;
 	}
 
 	public Account(String number, Float balance) {
-		this();
 		this.number = number;
 		this.balance = balance;
 	}

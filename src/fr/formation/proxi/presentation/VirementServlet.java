@@ -20,15 +20,33 @@ public class VirementServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		AccountService service = AccountService.getInstance();
+		String id = req.getParameter("id");
+		Integer id_client = Integer.parseInt(id);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/virement.jsp")
 		.forward(req, resp);
-		String id = req.getParameter("id");
-		String montant = req.getParameter("amount");
-		
-		Float amount = Float.parseFloat(montant);
-		Integer id_client = Integer.parseInt(id);
-		
-		service.transfer();
 
 	}
-}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		AccountService service = AccountService.getInstance();
+		
+		String id_emetteur = req.getParameter("id_emetteur");
+		Integer id_emet = Integer.parseInt(id_emetteur);
+		String id_receveur = req.getParameter("id_receveur");
+		Integer id_recev = Integer.parseInt(id_receveur);
+		String montant = req.getParameter("amount");
+		Float amount = Float.parseFloat(montant);
+		
+		if(service.transfer(id_emet, id_recev, amount)){
+			service.transfer(id_emet, id_recev, amount);
+			resp.sendRedirect(this.getServletContext().getContextPath() + "/index.html");
+		}
+		else {
+			resp.sendRedirect(this.getServletContext().getContextPath() + "/erreur.html");
+		}	
+	
+		}
+	}
+

@@ -31,12 +31,12 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 		<url-pattern>/editer.html</url-pattern>
 	</servlet-mapping>
 <servlet>
-		<servlet-name>UpdateServlet</servlet-name>
-		<servlet-class>fr.formation.proxi.presentation.UpdateServlet</servlet-class>
+		<servlet-name>VirementServlet</servlet-name>
+		<servlet-class>fr.formation.proxi.presentation.VirementServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>UpdateServlet</servlet-name>
-		<url-pattern>/update.html</url-pattern>
+		<servlet-name>VirementServlet</servlet-name>
+		<url-pattern>/virement.html</url-pattern>
 	</servlet-mapping>
   
 

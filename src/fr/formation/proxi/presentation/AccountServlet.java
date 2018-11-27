@@ -26,7 +26,6 @@ public class AccountServlet extends HttpServlet {
 		
 		req.setAttribute("accounts", service.getAll(id_client));
 		
-		System.out.println("");
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/comptes.jsp")
 		.forward(req, resp);
 	}
