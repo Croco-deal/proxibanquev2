@@ -57,14 +57,7 @@ private final ClientService cs;
             String query = String.format(SqlQueries.UPDATE_CLIENT,entity.getFirstname() , entity.getLastname() ,
             		entity.getEmail() , entity.getAddress() , entity.getId() );
 
-
-
-
-            st.execute(query);
-
-
-
-            
+            st.execute(query);            
 		System.out.println(entity.getFirstname());
 		
 		} catch (SQLException e) {

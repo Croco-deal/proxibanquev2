@@ -50,13 +50,19 @@
            <h2 class="section-heading text-uppercase">Vos Clients</h2>
             <h2 class="section-heading text-uppercase"></h2>
        		 <c:forEach var="client" items="${clients}">
- 	 			<fieldset>
- 	 				<h3 class="section-heading text-uppercase"> ${client.id} - ${client.firstname} ${client.lastname}</h3>
+ 	 			<fieldset style ="border:1px solid black">
+ 	 					<h3 class="section-heading text-uppercase">Client ${client.id} - ${client.firstname} ${client.lastname}</h3>
 				<div class="client" title="${client.id}">
 					<h5> Adresse: ${client.address} <br/> Email: ${client.email}</h5>
-						<h6> <a href="editer.html?id=${client.id}" style="text-align:left"> ---EDITER---  </a>
-						<a href="virement.html?id=${client.id}"> ---EFFECTUER UN VIREMENT---  </a>
-						<a href="editer.html?id=${client.id}"> ---AFFICHER LISTE DES COMPTES--- </a> </h6>			
+					
+						<h6>
+							<button class="button"> EDITER </button>
+								<a href="editer.html?id=${client.id}" class="button"> </a>
+							<button class="button"> EFFECTUER UN VIREMENT </button>
+								<a href="virement.html?id=${client.id}" class="button"> </a>
+							<button class="button"> AFFICHER LISTE DES COMPTES </button>
+								<a href="editer.html?id=${client.id}" class="button"> </a> 
+						</h6>			
 				</div>
 				</fieldset>
 			</c:forEach>
