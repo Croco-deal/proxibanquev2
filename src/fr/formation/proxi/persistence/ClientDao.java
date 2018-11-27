@@ -57,14 +57,7 @@ private final ClientService cs;
             String query = String.format(SqlQueries.UPDATE_CLIENT,entity.getFirstname() , entity.getLastname() ,
             		entity.getEmail() , entity.getAddress() , entity.getId() );
 
-
-
-
-            st.execute(query);
-
-
-
-            
+            st.execute(query);            
 		System.out.println(entity.getFirstname());
 		
 		} catch (SQLException e) {
@@ -77,6 +70,31 @@ private final ClientService cs;
 	public List<Client> readAccountAll(Integer a) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public Client read(Integer id) {
+	
+		Client client = new Client();
+		
+		try {
+			Statement st = this.mySqlConn.getConn().createStatement();
+			ResultSet rs = st.executeQuery(String.format(SqlQueries.READ,id));
+			rs.next();
+				//Integer id = rs.getInt("id");
+				String firstname  = rs.getString("firstname");
+				String lastname = rs.getString("lastname");
+				String email = rs.getString("email");
+				String address = rs.getString("address");
+				client.setId(id);
+				client.setFirstname(firstname);
+				client.setLastname(lastname);
+				client.setEmail(email);
+				client.setAddress(address);
+			} catch (SQLException e) {
+							
+			e.printStackTrace();
+			}
+		
+			return client;
 	}
 
 	}

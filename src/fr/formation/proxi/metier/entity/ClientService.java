@@ -28,11 +28,11 @@ public class ClientService {
 		Client updatedClient = new Client(id,firstname,lastname,email,address);
 
 
-		
-		
-		
 		return this.dao.update(updatedClient);
 		
+	}
+	public Client read(Integer id) {
+		return this.dao.read(id);
 	}
 	
 }

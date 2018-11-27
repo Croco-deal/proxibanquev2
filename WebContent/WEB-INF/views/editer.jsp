@@ -55,8 +55,8 @@
 				<input id="firstname" name="firstname" value="${client.firstname}">			
 					</div>
 					<div>
-				<label for="name">Nom</label>
-				<input id="name" name="name" value="${client.name}">			
+				<label for="lastname">Nom</label>
+				<input id="lastname" name="lastname" value="${client.lastname}">			
 					</div>
 					<div>
 				<label for="title">Adresse</label>
