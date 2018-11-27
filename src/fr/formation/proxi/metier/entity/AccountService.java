@@ -22,9 +22,8 @@ import fr.formation.proxi.persistence.SqlQueries;
  */
 
 
-
 public class AccountService {
-	
+
 	private static final AccountService INSTANCE = new AccountService();
 
 	public static AccountService getInstance() {
@@ -41,12 +40,10 @@ public class AccountService {
 	}
 
 	public List<Account> getAll(Integer id) {
+
 		return this.dao.readAccountAll(id);
 	}
-	
-//	public void read(Integer id_client) {
-//		this.dao.read(Integer id_client);
-//	}
+
 	
 	/**
 	 * permet d'effectuer le virement d'un compte à un autre 
@@ -56,30 +53,33 @@ public class AccountService {
 	 * @param amount
 	 * @return boolean : si le crédit est suffisant retourne vrai sinon retourn faux
 	 */
+
 	public boolean transfer(Integer id_compte_emetteur, Integer id_compte_receveur, float amount) {
 		boolean a = false;
-		
-		Account accountEmetteur = this.dao.read(id_compte_emetteur);
-		Account accountReceveur = this.dao.read(id_compte_receveur);
-		
-		accountEmetteur.setBalance(accountEmetteur.getBalance() - amount);
-		accountReceveur.setBalance(accountReceveur.getBalance() + amount);
-		
-		if(accountEmetteur.getBalance()>amount) {
-		
-		this.dao.update(accountReceveur);
-		this.dao.update(accountEmetteur);
-		System.out.println("BALALALALALALAL");
-		
-		a = true;
+
+		if (id_compte_emetteur != id_compte_receveur) {
+
+			Account accountEmetteur = this.dao.read(id_compte_emetteur);
+			Account accountReceveur = this.dao.read(id_compte_receveur);
+
+			accountEmetteur.setBalance(accountEmetteur.getBalance() - amount);
+			accountReceveur.setBalance(accountReceveur.getBalance() + amount);
+
+			if (accountEmetteur.getBalance() > amount) {
+				this.dao.update(accountReceveur);
+				this.dao.update(accountEmetteur);
+
+				a = true;
+			} else {
+				a = false;
+			}
 		} else {
 			a = false;
 		}
-		 return a;
-	
+
+		return a;
+
 	}
-}		
-	
-//	public Account transfer(Integer id_compte_emetteur , Integer id_compte_receveur , float montant) {
-//		return this.dao.transfer(id_compte_emetteur,id_compte_receveur,montant);
+}
+
 

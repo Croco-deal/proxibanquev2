@@ -24,6 +24,7 @@ public class VirementServlet extends HttpServlet {
 		AccountService service = AccountService.getInstance();
 		String id = req.getParameter("id");
 		Integer id_client = Integer.parseInt(id);
+		req.setAttribute("accounts", service.getAll(id_client));
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/virement.jsp")
 		.forward(req, resp);
 
@@ -33,6 +34,7 @@ public class VirementServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		AccountService service = AccountService.getInstance();
+		
 		
 		String id_emetteur = req.getParameter("id_emetteur");
 		Integer id_emet = Integer.parseInt(id_emetteur);

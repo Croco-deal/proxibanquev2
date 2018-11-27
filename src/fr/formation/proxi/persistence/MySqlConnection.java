@@ -28,7 +28,6 @@ public class MySqlConnection {
 		}
 	}
 	
-
 	public Connection getConn() {
 		return conn;
 	}
