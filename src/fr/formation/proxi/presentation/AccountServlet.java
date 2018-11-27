@@ -21,9 +21,12 @@ public class AccountServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		AccountService service = AccountService.getInstance();
-		System.out.println("avant");
-		req.setAttribute("accounts", service.getAll());
-		System.out.println("apres");
+		String id = req.getParameter("id");
+		 Integer id_client = Integer.parseInt(id);
+		
+		req.setAttribute("accounts", service.getAll(id_client));
+		
+		System.out.println("");
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/comptes.jsp")
 		.forward(req, resp);
 	}

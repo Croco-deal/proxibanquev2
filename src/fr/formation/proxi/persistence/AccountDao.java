@@ -26,24 +26,33 @@ public class AccountDao implements Dao<Account>{
 	}
 
 	
-	public List<Account> readAll() {
+	public List<Account> readAccountAll(Integer id) {
 
-		List<Account> result = new ArrayList<>();
+		List<Account> accounts = new ArrayList<>();
 
 		try {
 			Statement st = this.mySqlConn.getConn().createStatement();
-			ResultSet rs = st.executeQuery(SqlQueries.READ_ALL);
+			ResultSet rs = st.executeQuery(String.format(SqlQueries.READ_ALL_ACCOUNT , id));
 			while (rs.next()) {
-				Integer id = rs.getInt("id");
 				String number  = rs.getString("number");
 				float balance = Float.parseFloat( rs.getString("balance"));
 				boolean savings = true;
-				result.add(new Account( number , balance , savings));
+				accounts.add(new Account( number , balance , savings));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	
-		return result;
+		return accounts;
 	}
+
+	@Override
+	public List<Account> readAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+//	public Account transfer() {
+//		
+//	}
 }

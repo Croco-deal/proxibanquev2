@@ -25,5 +25,7 @@ public interface Dao<T> {
 	 */
 	public List<T> readAll();
 	
+	public List<T> readAccountAll(Integer a);
+	
 
 }

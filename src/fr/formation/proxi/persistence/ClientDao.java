@@ -73,6 +73,12 @@ private final ClientService cs;
 		return entity;
 	}
 
+	@Override
+	public List<Client> readAccountAll(Integer a) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	}
 
 	

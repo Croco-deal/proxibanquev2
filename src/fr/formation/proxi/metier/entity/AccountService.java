@@ -19,8 +19,11 @@ public class AccountService {
 		this.dao = new AccountDao();
 	}
 
-	public List<Account> getAll() {
-		return this.dao.readAll();
+	public List<Account> getAll(Integer id) {
+		return this.dao.readAccountAll(id);
+	}
+	
+//	public Account transfer(Integer id_compte_emetteur , Integer id_compte_receveur , float montant) {
+//		return this.dao.transfer(id_compte_emetteur,id_compte_receveur,montant);
 	}
 
-}
