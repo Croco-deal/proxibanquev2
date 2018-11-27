@@ -1,25 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<div>
-		<c:forEach var="account" items="${accounts}">
-			<div class="account">
-				<h2>
-					${account.balance} <a href="delete.html?id=${account.number}"> X</a>
-				</h2>
-				<p>${account.number}</p>
-			</div>
-		</c:forEach>
-	</div>
-</body>
-</html>
 
 
 <!DOCTYPE html>
@@ -34,24 +15,24 @@
 
     <title>Proxibanque SI</title>
 
-    <!-- Bootstrap core CSS -->
+<!--     Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
+<!--     Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- Custom styles for this template -->
+<!--     Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
-    <!-- Header -->
+<!--     Header -->
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
@@ -62,23 +43,24 @@
       </div>
     </header>
 
-    <!-- Comptes -->
-
-	<form>
-		<div>
-			<label for="number">Numéro de compte</label> <input id="number"
-				name="number" value="${account.number}">
-		</div>
-		<div>
-			<label for="balance">Crédit </label> <input id="balance" name="balance"
-				value="${account.balance}">
-		</div>
-
-	</form>
-
-
-<
-    <!-- Footer -->
+<!--     Comptes -->
+    <section class="bg-light" id="team">
+		<table style="width:70%; border:1px solid black; padding:60px; margin: auto;">
+				<tr>
+					<th>Numéro de compte </th>
+					<th>Compte Courant </th> 
+					<th>Compte Epargne </th>
+				</tr>
+					<c:forEach var="account" items="${accounts}"> 
+						<tr class="account">  
+							<td> ${account.number}</td>
+							<td> ${account.balance}</td>
+							<td> ${account.savings}</td>
+						</tr>
+					</c:forEach> 
+		</table>
+	</section>
+<!--     Footer -->
     <footer>
       <div class="container">
         <div class="row">
@@ -118,9 +100,9 @@
       </div>
     </footer>
 
-    <!-- Portfolio Modals -->
+<!--     Portfolio Modals -->
 
-    <!-- Modal 1 -->
+<!--     Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -133,7 +115,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
+                  Project Details Go Here
                   <h2 class="text-uppercase">Créer un dossier client</h2>
                   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
@@ -154,7 +136,7 @@
       </div>
     </div>
 
-    <!-- Modal 2 -->
+<!--     Modal 2 -->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -167,7 +149,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
+                  Project Details Go Here
                   <h2 class="text-uppercase">Project Name</h2>
                   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
@@ -188,7 +170,7 @@
       </div>
     </div>
 
-    <!-- Modal 3 -->
+<!--     Modal 3 -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -201,7 +183,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
+                  Project Details Go Here
                   <h2 class="text-uppercase">Project Name</h2>
                   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
@@ -222,7 +204,7 @@
       </div>
     </div>
 
-    <!-- Modal 4 -->
+<!--     Modal 4 -->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -235,7 +217,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
+                  Project Details Go Here
                   <h2 class="text-uppercase">Project Name</h2>
                   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
@@ -256,7 +238,7 @@
       </div>
     </div>
 
-    <!-- Modal 5 -->
+<!--     Modal 5 -->
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -269,7 +251,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
+                  Project Details Go Here
                   <h2 class="text-uppercase">Project Name</h2>
                   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
@@ -290,7 +272,7 @@
       </div>
     </div>
 
-    <!-- Modal 6 -->
+<!--     Modal 6 -->
     <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -303,7 +285,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
+                  Project Details Go Here
                   <h2 class="text-uppercase">Project Name</h2>
                   <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
@@ -324,22 +306,20 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript -->
+<!--     Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Plugin JavaScript -->
+<!--     Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Contact form JavaScript -->
+<!--     Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
 
-    <!-- Custom scripts for this template -->
+<!--     Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
 
   </body>
 
 </html>
-
->>>>>>> 6d23f24aeca69d1d8b8f5b3c1bf3ee37e22f56fa
